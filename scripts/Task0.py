@@ -35,3 +35,6 @@ def firstText(texts):
 
 
 print(firstText(texts))
+
+
+# Print the last record of calls
