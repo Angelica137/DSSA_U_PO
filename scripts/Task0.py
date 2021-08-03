@@ -3,7 +3,8 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files.
 """
 import csv
-with open('scritps/texts.csv', 'r') as f:
+
+with open('scripts/texts.csv', 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
 
@@ -22,4 +23,10 @@ Print messages:
 """
 
 # Print the first record of texts
-print("First recird of texts" + texts[0])
+
+
+def firstText(texts):
+    return texts[0]
+
+
+print(texts[0])
