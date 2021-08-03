@@ -46,3 +46,6 @@ def lastCall(calls):
     resultCall = "Last record of calls, " + incomingNo + " calls " + \
         receiving + " at time " + time + ", lasting " + duration + " seconds"
     return resultCall
+
+
+print(lastCall(calls))
