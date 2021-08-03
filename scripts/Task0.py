@@ -39,4 +39,4 @@ print(firstText(texts))
 
 # Print the last record of calls
 def lastCall(calls):
-    return "this is the last call"
+    return "Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds"
