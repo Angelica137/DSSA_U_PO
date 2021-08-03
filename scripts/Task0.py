@@ -3,12 +3,12 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files.
 """
 import csv
-with open('texts.csv', 'r') as f:
+with open('scritps/texts.csv', 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
 
 
-with open('calls.csv', 'r') as f:
+with open('scripts/calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
@@ -20,3 +20,6 @@ Print messages:
 "First record of texts, <incoming number> texts <answering number> at time <time>"
 "Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds"
 """
+
+# Print the first record of texts
+print("First recird of texts" + texts[0])
