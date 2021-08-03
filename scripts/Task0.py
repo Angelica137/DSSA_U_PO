@@ -38,3 +38,5 @@ print(firstText(texts))
 
 
 # Print the last record of calls
+def lastCall(calls):
+    return "this is the last call"
