@@ -26,7 +26,12 @@ Print messages:
 
 
 def firstText(texts):
-    return texts[0]
+    incoming = texts[0][0]
+    answering = texts[0][1]
+    time = texts[0][2]
+    result = "First record of texts, " + incoming + \
+        " texts " + answering + " at time " + time
+    return result
 
 
-print(texts[0])
+print(firstText(texts))
