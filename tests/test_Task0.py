@@ -17,4 +17,5 @@ def test_firstText_returns_first_text():
 
 
 def test_lastCall_returns_last_call():
-    assert lastCall(calls) == "this is the last call"
+    assert lastCall(
+        calls) == "Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds"
