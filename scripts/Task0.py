@@ -39,4 +39,10 @@ print(firstText(texts))
 
 # Print the last record of calls
 def lastCall(calls):
-    return "Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds"
+    incomingNo = calls[-1][0]
+    receiving = calls[-1][1]
+    time = calls[-1][2]
+    duration = calls[-1][3]
+    resultCall = "Last record of calls, " + incomingNo + " calls " + \
+        receiving + " at time " + time + ", lasting " + duration + " seconds"
+    return resultCall

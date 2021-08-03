@@ -18,4 +18,4 @@ def test_firstText_returns_first_text():
 
 def test_lastCall_returns_last_call():
     assert lastCall(
-        calls) == "Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds"
+        calls) == "Last record of calls, 98447 62998 calls (080)46304537 at time 30-09-2016 23:57:15, lasting 2151 seconds"
