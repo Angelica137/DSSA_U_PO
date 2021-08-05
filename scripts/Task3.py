@@ -44,3 +44,22 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+
+
+def callFromBangalore(calls):
+    bangaloreCaller = []
+    for call in calls:
+        print(call[0])
+        if '(080)' in call[0]:
+            bangaloreCaller.append(call)
+    return bangaloreCaller
+
+
+string = '(080)33118033'
+substring = '(080)'
+
+if substring in string:
+    print("I am here")
+
+
+print(callFromBangalore(calls))
