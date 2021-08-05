@@ -20,7 +20,7 @@ Print a message:
 """
 
 
-def uniquetNumbers(texts, calls):
+def uniqueNumbers(texts, calls):
     records = texts + calls
     unique_numbers = []
     for record in records:
@@ -29,4 +29,9 @@ def uniquetNumbers(texts, calls):
         if record[1] not in unique_numbers:
             unique_numbers.append(record[1])
     count_unique_nos = len(unique_numbers)
-    return count_unique_nos
+    uniqueNosMessage = "There are " + str(count_unique_nos) + \
+        " different telephone numbers in the records."
+    return uniqueNosMessage
+
+
+print(uniqueNumbers(texts, calls))
