@@ -23,6 +23,6 @@ Print a message:
 def countTextUsers(texts):
     unique_numbers = []
     for text in texts:
-        if text not in unique_numbers:
-            unique_numbers.append(text)
+        if text[0] not in unique_numbers:
+            unique_numbers.append(text[0])
     return unique_numbers
