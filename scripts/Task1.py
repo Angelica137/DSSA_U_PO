@@ -20,12 +20,13 @@ Print a message:
 """
 
 
-def countUniquetNumbers(texts, calls):
+def uniquetNumbers(texts, calls):
+    records = texts + calls
     unique_numbers = []
-    for text in texts:
-        if text[0] not in unique_numbers:
-            unique_numbers.append(text[0])
-        if text[1] not in unique_numbers:
-            unique_numbers.append(text[1])
+    for record in records:
+        if record[0] not in unique_numbers:
+            unique_numbers.append(record[0])
+        if record[1] not in unique_numbers:
+            unique_numbers.append(record[1])
     count_unique_nos = len(unique_numbers)
     return count_unique_nos
