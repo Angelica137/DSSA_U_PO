@@ -22,12 +22,14 @@ September 2016.".
 
 
 def longestCall(calls):
-    longest_call = 0
+    longest_call_mins = 0
+    longest_call_no = ''
     for call in calls:
         minutes = int(call[3])
-        if minutes > longest_call:
-            longest_call = minutes
-    return longest_call
+        if minutes > longest_call_mins:
+            longest_call_mins = minutes
+            longest_call_no = call[0]
+    return longest_call_no
 
 
 print(longestCall(calls))
