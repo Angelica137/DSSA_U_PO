@@ -27,4 +27,5 @@ def countTextUsers(texts):
             unique_numbers.append(text[0])
         if text[1] not in unique_numbers:
             unique_numbers.append(text[1])
-    return unique_numbers
+    count_unique_nos = len(unique_numbers)
+    return count_unique_nos
