@@ -5,4 +5,4 @@ calls = [['78130 00821', '98453 94494', '01-09-2016 06:01:12', '186'], ['78298 9
 
 
 def test_longestCall_returns_10():
-    assert longestCall(calls) == '2093'
+    assert longestCall(calls) == 2093
