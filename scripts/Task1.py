@@ -20,7 +20,7 @@ Print a message:
 """
 
 
-def countTextUsers(texts):
+def countUniquetNumbers(texts, calls):
     unique_numbers = []
     for text in texts:
         if text[0] not in unique_numbers:
