@@ -3,11 +3,11 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files
 """
 import csv
-with open('texts.csv', 'r') as f:
+with open('scripts/texts.csv', 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
 
-with open('calls.csv', 'r') as f:
+with open('scripts/calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
@@ -20,3 +20,6 @@ Print a message:
 September 2016.".
 """
 
+
+def longestCall(calls):
+    return "I am here"
