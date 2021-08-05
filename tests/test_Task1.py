@@ -1,4 +1,3 @@
-from typing import Counter
 from scripts.Task1 import uniqueNumbers
 
 texts = [[1, 3, 'bla'], [2, 1, 'bla'], [2, 1, 'bla'], [1, 3, 'bla']]
