@@ -57,11 +57,19 @@ def callFromBangalore(calls):
 def telemarkerterCodes(calls):
     recepients = callFromBangalore(calls)
     telemarketers = []
-    print(recepients)
     for call in recepients:
         if call[0:3] == '140':
             telemarketers.append(call)
     return telemarketers
+
+
+def mobileNumbers(calls):
+    recepients = callFromBangalore(calls)
+    mobiles = []
+    for call in recepients:
+        if call[0] == '(':
+            mobiles.append(call)
+    return mobiles
 
 
 recepients = ['98453 94494', '(022)28952819', '(04344)316423', '1408371942']
