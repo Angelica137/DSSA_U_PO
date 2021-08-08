@@ -1,4 +1,4 @@
-from scripts.Task3 import callFromBangalore, telemarkerterCodes, fixedLines, fixedLinesSimple, mobileCodes
+from scripts.Task3 import callFromBangalore, telemarkerterCodes, fixedLines, fixedLinesUnique, mobileCodes, areaCodes
 
 calls = [['78130 00821', '98453 94494', '01-09-2016 06:01:12', '186'],
          ['78298 91466', '(022)28952819', '01-09-2016 06:01:59', '2093'],
@@ -43,8 +43,12 @@ def test_fixedLines_return_area_codes():
 
 
 def test_fixedLinesSimple_return_unique_area_codes():
-    assert fixedLinesSimple(calls2) == ['(022)', '(04344)']
+    assert fixedLinesUnique(calls2) == ['(022)', '(04344)']
 
 
 def test_callFromBanaglore_returns_calls2():
     assert mobileCodes(calls2) == ['98453']
+
+
+def test_areaCodes_returns_area_codes():
+    assert mobileCodes(calls2) == ['98453', '(022)', '(04344)', '140']

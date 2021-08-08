@@ -73,7 +73,7 @@ def fixedLines(calls):
     return area_codes
 
 
-def fixedLinesSimple(calls):
+def fixedLinesUnique(calls):
     codes = fixedLines(calls)
     unique_codes = []
     for code in codes:
@@ -87,7 +87,9 @@ def mobileCodes(calls):
     mobile_area_codes = []
     for number in recepients:
         if ' ' in number:
-            mobile_area_codes.append(number[0:number.find(' ')])
+            code = number[0:number.find(' ')]
+            if code not in mobile_area_codes:
+                mobile_area_codes.append(number[0:number.find(' ')])
     return mobile_area_codes
 
 
