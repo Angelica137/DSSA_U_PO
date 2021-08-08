@@ -47,17 +47,32 @@ The percentage should have 2 decimal digits
 
 
 def receivingAreaCodesBangalore(calls):
-    unique_area_codes = []
+    area_codes = []
     for call in calls:
         if '(080)' in call[0]:
-            if call[1][0:3] == '140' and '140' not in unique_area_codes:
-                unique_area_codes.append('140')
-            if ')' in call[1] and call[1][0:call[1].find(')') + 1] not in unique_area_codes:
-                unique_area_codes.append(call[1][0:call[1].find(')') + 1])
-            if ' ' in call[1] and call[1][0:call[1].find(' ')] not in unique_area_codes:
-                unique_area_codes.append(call[1][0:call[1].find(' ')])
-    area_codes_ordered = sorted(unique_area_codes)
+            if call[1][0:3] == '140' and '140' not in area_codes:
+                area_codes.append('140')
+            if ')' in call[1] and call[1][0:call[1].find(')') + 1] not in area_codes:
+                area_codes.append(call[1][0:call[1].find(')') + 1])
+            if ' ' in call[1] and call[1][0:call[1].find(' ')] not in area_codes:
+                area_codes.append(call[1][0:call[1].find(' ')])
+    area_codes_ordered = sorted(area_codes)
+    print("The numbers called by people in Bangalore have codes:")
+    for elem in area_codes_ordered:
+        print(elem)
     return area_codes_ordered
+
+
+def callsToBangalore(calls):
+    calls_from_bangalore = 0
+    count = 0
+    for call in calls:
+        if '(080)' in call[0]:
+            calls_from_bangalore += 1
+            if '(080)' in call[1]:
+                count += 1
+    percentage = round((count / calls_from_bangalore * 100), 2)
+    return percentage
 
 
 calls2 = [['(080)33118033', '98453 94494', '01-09-2016 06:01:12', '186'],
