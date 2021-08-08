@@ -26,29 +26,8 @@ def test_callFromBanaglore_returns_empty():
 
 
 def test_callFromBanaglore_returns_calls1():
-    assert callFromBangalore(calls1) == ['98453 94494']
+    assert callFromBangalore(calls1) == ['98453']
 
 
 def test_callFromBanaglore_returns_calls2():
-    assert callFromBangalore(calls2) == [
-        '98453 94494', '(022)28952819', '(04344)316423', '1408371942', '(022)28952819']
-
-
-def test_telemarketersCodes_returns_1408371942():
-    assert telemarkerterCodes(calls2) == ['140']
-
-
-def test_fixedLines_return_area_codes():
-    assert fixedLines(calls2) == ['(022)', '(04344)', '(022)']
-
-
-def test_fixedLinesSimple_return_unique_area_codes():
-    assert fixedLinesUnique(calls2) == ['(022)', '(04344)']
-
-
-def test_callFromBanaglore_returns_calls2():
-    assert mobileCodes(calls2) == ['98453']
-
-
-def test_areaCodes_returns_area_codes():
-    assert mobileCodes(calls2) == ['98453', '(022)', '(04344)', '140']
+    assert callFromBangalore(calls2) == ['98453', '(022)', '(04344)', '140']

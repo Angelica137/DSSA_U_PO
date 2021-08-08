@@ -47,10 +47,12 @@ The percentage should have 2 decimal digits
 
 
 def callFromBangalore(calls):
-    bangaloreCalled = []
+    unique_area_codes = []
     for call in calls:
         if '(080)' in call[0]:
-            bangaloreCalled.append(call[1])
+            if call[0:3] == '140' and '140' not in unique_area_codes:
+                unique_area_codes.append('140')
+
     return bangaloreCalled
 
 
