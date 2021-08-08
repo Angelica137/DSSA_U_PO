@@ -59,21 +59,21 @@ def telemarkerterCodes(calls):
     telemarketers = []
     for call in recepients:
         if call[0:3] == '140':
-            telemarketers.append(call)
+            telemarketers.append('140')
             break
     return telemarketers
 
 
-def mobileNumbers(calls):
+def fixedLines(calls):
     recepients = callFromBangalore(calls)
-    mobiles = []
+    area_codes = []
     for call in recepients:
-        if call[0] == '(':
-            mobiles.append(call)
-    return mobiles
+        if ')' in call:
+            area_codes.append(call[0:call.find(')') + 1])
+    return area_codes
 
 
 recepients = ['98453 94494', '(022)28952819', '(04344)316423', '1408371942']
 for call in recepients:
-    if call[0:3] == '140':
+    if call[0: 3] == '140':
         print(call)
