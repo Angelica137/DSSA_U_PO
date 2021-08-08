@@ -17,15 +17,14 @@ calls2 = [['(080)33118033', '98453 94494', '01-09-2016 06:01:12', '186'],
           ['97424 22395', '(022)47410783', '01-09-2016 06:03:51', '1975'],
           ['93427 40118', '(080)33118033', '01-09-2016 06:11:23', '1156']]
 
+
 def test_callFromBanaglore_returns_empty():
     assert callFromBangalore(calls) == []
 
 
 def test_callFromBanaglore_returns_calls1():
-    assert callFromBangalore(calls1) == [[
-        '(080)33118033', '98453 94494', '01-09-2016 06:01:12', '186']]
+    assert callFromBangalore(calls1) == ['98453 94494']
 
 
-def test_callFromBanaglore_returns_calls1():
-    assert callFromBangalore(calls2) == [[
-        '(080)33118033', '98453 94494', '01-09-2016 06:01:12', '186'], ['(080)33118033', '(022)28952819', '01-09-2016 06:01:59', '2093']]
+def test_callFromBanaglore_returns_calls2():
+    assert callFromBangalore(calls2) == ['98453 94494', '(022)28952819']
