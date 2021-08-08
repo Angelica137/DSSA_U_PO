@@ -31,4 +31,4 @@ def test_receivingAreaCodesBangalore_returns_calls1():
 
 def test_receivingAreaCodesBangalore_returns_calls2():
     assert receivingAreaCodesBangalore(
-        calls2) == ['98453', '(022)', '(04344)', '140']
+        calls2) == ['(022)', '(04344)', '140', '98453']

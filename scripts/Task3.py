@@ -56,28 +56,8 @@ def receivingAreaCodesBangalore(calls):
                 unique_area_codes.append(call[1][0:call[1].find(')') + 1])
             if ' ' in call[1] and call[1][0:call[1].find(' ')] not in unique_area_codes:
                 unique_area_codes.append(call[1][0:call[1].find(' ')])
-
-    return unique_area_codes
-
-
-def fixedLinesUnique(calls):
-    codes = fixedLines(calls)
-    unique_codes = []
-    for code in codes:
-        if code not in unique_codes:
-            unique_codes.append(code)
-    return unique_codes
-
-
-def mobileCodes(calls):
-    recepients = callFromBangalore(calls)
-    mobile_area_codes = []
-    for number in recepients:
-        if ' ' in number:
-            code = number[0:number.find(' ')]
-            if code not in mobile_area_codes:
-                mobile_area_codes.append(number[0:number.find(' ')])
-    return mobile_area_codes
+    area_codes_ordered = sorted(unique_area_codes)
+    return area_codes_ordered
 
 
 calls2 = [['(080)33118033', '98453 94494', '01-09-2016 06:01:12', '186'],
