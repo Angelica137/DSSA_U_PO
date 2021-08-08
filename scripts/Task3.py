@@ -46,33 +46,18 @@ The percentage should have 2 decimal digits
 """
 
 
-def callFromBangalore(calls):
+def receivingAreaCodesBangalore(calls):
     unique_area_codes = []
     for call in calls:
         if '(080)' in call[0]:
-            if call[0:3] == '140' and '140' not in unique_area_codes:
+            if call[1][0:3] == '140' and '140' not in unique_area_codes:
                 unique_area_codes.append('140')
+            if ')' in call[1] and call[1][0:call[1].find(')') + 1] not in unique_area_codes:
+                unique_area_codes.append(call[1][0:call[1].find(')') + 1])
+            if ' ' in call[1] and call[1][0:call[1].find(' ')] not in unique_area_codes:
+                unique_area_codes.append(call[1][0:call[1].find(' ')])
 
-    return bangaloreCalled
-
-
-def telemarkerterCodes(calls):
-    recepients = callFromBangalore(calls)
-    telemarketers = []
-    for call in recepients:
-        if call[0:3] == '140':
-            telemarketers.append('140')
-            break
-    return telemarketers
-
-
-def fixedLines(calls):
-    recepients = callFromBangalore(calls)
-    area_codes = []
-    for call in recepients:
-        if ')' in call:
-            area_codes.append(call[0:call.find(')') + 1])
-    return area_codes
+    return unique_area_codes
 
 
 def fixedLinesUnique(calls):
@@ -95,7 +80,13 @@ def mobileCodes(calls):
     return mobile_area_codes
 
 
-recepients = ['98453 94494', '(022)28952819', '(04344)316423', '1408371942']
-for call in recepients:
-    if call[0: 3] == '140':
-        print(call)
+calls2 = [['(080)33118033', '98453 94494', '01-09-2016 06:01:12', '186'],
+          ['(080)33118033', '(022)28952819', '01-09-2016 06:01:59', '2093'],
+          ['97424 22395', '(022)47410783', '01-09-2016 06:03:51', '1975'],
+          ['93427 40118', '(080)33118033', '01-09-2016 06:11:23', '1156'],
+          ['(080)67362492', '(04344)316423', '01-09-2016 07:24:45', '2258'],
+          ['(080)67362492', '1408371942', '01-09-2016 07:24:45', '2258'],
+          ['(080)33118033', '(022)28952819', '01-09-2016 06:01:59', '2093']]
+
+
+print(receivingAreaCodesBangalore(calls2))

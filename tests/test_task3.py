@@ -1,4 +1,4 @@
-from scripts.Task3 import callFromBangalore, telemarkerterCodes, fixedLines, fixedLinesUnique, mobileCodes, areaCodes
+from scripts.Task3 import receivingAreaCodesBangalore
 
 calls = [['78130 00821', '98453 94494', '01-09-2016 06:01:12', '186'],
          ['78298 91466', '(022)28952819', '01-09-2016 06:01:59', '2093'],
@@ -21,13 +21,14 @@ calls2 = [['(080)33118033', '98453 94494', '01-09-2016 06:01:12', '186'],
           ['(080)33118033', '(022)28952819', '01-09-2016 06:01:59', '2093']]
 
 
-def test_callFromBanaglore_returns_empty():
-    assert callFromBangalore(calls) == []
+def test_receivingAreaCodesBangalore_returns_empty():
+    assert receivingAreaCodesBangalore(calls) == []
 
 
-def test_callFromBanaglore_returns_calls1():
-    assert callFromBangalore(calls1) == ['98453']
+def test_receivingAreaCodesBangalore_returns_calls1():
+    assert receivingAreaCodesBangalore(calls1) == ['98453']
 
 
-def test_callFromBanaglore_returns_calls2():
-    assert callFromBangalore(calls2) == ['98453', '(022)', '(04344)', '140']
+def test_receivingAreaCodesBangalore_returns_calls2():
+    assert receivingAreaCodesBangalore(
+        calls2) == ['98453', '(022)', '(04344)', '140']
