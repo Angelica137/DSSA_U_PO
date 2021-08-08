@@ -82,6 +82,15 @@ def fixedLinesSimple(calls):
     return unique_codes
 
 
+def mobileCodes(calls):
+    recepients = callFromBangalore(calls)
+    mobile_area_codes = []
+    for number in recepients:
+        if ' ' in number:
+            mobile_area_codes.append(number[0:number.find(' ')])
+    return mobile_area_codes
+
+
 recepients = ['98453 94494', '(022)28952819', '(04344)316423', '1408371942']
 for call in recepients:
     if call[0: 3] == '140':
