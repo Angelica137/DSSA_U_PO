@@ -1,4 +1,4 @@
-from scripts.Task3 import callFromBangalore
+from scripts.Task3 import callFromBangalore, telemarkerterCodes
 
 calls = [['78130 00821', '98453 94494', '01-09-2016 06:01:12', '186'],
          ['78298 91466', '(022)28952819', '01-09-2016 06:01:59', '2093'],
@@ -32,4 +32,4 @@ def test_callFromBanaglore_returns_calls2():
 
 
 def test_telemarketersCodes_returns_1408371942():
-    assert telemarketerCodes(calls2) == ['1408371942']
+    assert telemarkerterCodes(calls2) == ['1408371942']
