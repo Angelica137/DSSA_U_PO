@@ -50,15 +50,8 @@ def callFromBangalore(calls):
     bangaloreCaller = []
     for call in calls:
         if '(080)' in call[0]:
-            bangaloreCaller.append(call)
+            bangaloreCaller.append(call[1])
     return bangaloreCaller
-
-
-string = '(080)33118033'
-substring = '(080)'
-
-if substring in string:
-    print("I am here")
 
 
 print(callFromBangalore(calls))
