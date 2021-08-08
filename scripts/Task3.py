@@ -73,6 +73,15 @@ def fixedLines(calls):
     return area_codes
 
 
+def fixedLinesSimple(calls):
+    codes = fixedLines(calls)
+    unique_codes = []
+    for code in codes:
+        if code not in unique_codes:
+            unique_codes.append(code)
+    return unique_codes
+
+
 recepients = ['98453 94494', '(022)28952819', '(04344)316423', '1408371942']
 for call in recepients:
     if call[0: 3] == '140':

@@ -43,4 +43,4 @@ def test_fixedLines_return_area_codes():
 
 
 def test_fixedLinesSimple_return_unique_area_codes():
-    assert fixedLines(calls2) == ['(022)', '(04344)']
+    assert fixedLinesSimple(calls2) == ['(022)', '(04344)']
