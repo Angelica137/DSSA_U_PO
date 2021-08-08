@@ -33,3 +33,7 @@ def test_callFromBanaglore_returns_calls2():
 
 def test_telemarketersCodes_returns_1408371942():
     assert telemarkerterCodes(calls2) == ['1408371942']
+
+
+def test_mobileNumbers_return_mobile_numbers():
+    assert mobileNumbers(calls2) == ['(022)28952819', '(04344)316423']
