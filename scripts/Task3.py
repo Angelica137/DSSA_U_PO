@@ -60,6 +60,7 @@ def telemarkerterCodes(calls):
     for call in recepients:
         if call[0:3] == '140':
             telemarketers.append(call)
+            break
     return telemarketers
 
 
