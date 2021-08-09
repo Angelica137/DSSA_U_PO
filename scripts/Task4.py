@@ -43,6 +43,24 @@ def notInTexts(calls, texts):
     return no_texts
 
 
+'''
+Big Oh Calculation notInTexts(calls, texts):
+
+no_texts = [] -> 1 step
+for call in calls: -> n steps
+    if call[0] not in no_texts: -> n steps
+        not_in_texts = True = 1 step
+        for text in texts: -> n steps
+            if call[0] in text: -> n steps
+                not_in_texts = False -> 1 step
+        if not_in_texts == True: -> 1 step
+            no_texts.append(call[0]) -> 1 step
+return no_texts
+
+Big O = O(n^2)
+'''
+
+
 def noIncomingCalls(numbers, calls):
     '''
     returns the numbers that do not receive any calls
@@ -59,14 +77,30 @@ def noIncomingCalls(numbers, calls):
     return no_incoming_calls
 
 
+'''
+Big Oh Calculation noIncomingCalls(numbers, calls):
+
+no_incoming_calls = [] -> 1 step
+for number in numbers: -> n steps
+    incoming_calls = False -> 1 step
+    for i in range(len(calls)): -> n steps
+        if number == calls[i][1]: -> 1 step
+            incoming_calls = True -> 1 step
+            i += 1 -> 1 step
+    if incoming_calls == False and number not in no_incoming_calls: -> 1 step + k steps
+        no_incoming_calls.append(number) -> 1 step
+return no_incoming_calls -> step
+
+Big O = O(n^2)
+'''
+
+
 def findTelemarketers(calls, texts):
-    no_texts = notInTexts(calls, texts)
-    telemarketers = noIncomingCalls(no_texts, calls)
-    ordered_numbers = sorted(telemarketers)
+    no_texts = notInTexts(calls, texts)  # O(n^2)
+    telemarketers = noIncomingCalls(no_texts, calls)  # O(n^2)
+    ordered_numbers = sorted(telemarketers)  # O(nlogn)
     return ordered_numbers
 
-
-print(findTelemarketers(calls, texts))
 
 '''
 Answer

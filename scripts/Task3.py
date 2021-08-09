@@ -72,7 +72,7 @@ for call in calls: -> n steps
             area_codes.append(call[1][0:call[1].find(')') + 1]) -> 1 step
         if ' ' in call[1] and call[1][0:call[1].find(' ')] not in area_codes: -> O(k) + O(k)
             area_codes.append(call[1][0:call[1].find(' ')]) -> 1 step
-area_codes_ordered = sorted(area_codes) -> 1 step
+area_codes_ordered = sorted(area_codes) -> O(nlogn)
 return area_codes_ordered -> 1 step
 
 Big O = O(n)
