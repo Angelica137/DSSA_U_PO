@@ -1,4 +1,4 @@
-from scripts.Task4 import isTelemarketer
+from scripts.Task4 import isTelemarketer, noIncomingCalls
 
 
 calls = [['1408371942', '98453 94494', '01-09-2016 06:01:12', '186'],
@@ -30,5 +30,5 @@ def test_isTelemarkter_returns_not_in_text_file():
         '1408371942', '1408371333', '(080)67362492']
 
 
-def test_isTelemarkter_returns_not_incoming_calls():
-    assert isTelemarketer(calls, texts) == ['1408371942', '1408371333']
+def test_noIncomingCalls_returns_not_incoming_calls():
+    assert noIncomingCalls(calls2) == ['1408371123', '1408371456']

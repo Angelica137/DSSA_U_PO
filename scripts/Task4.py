@@ -30,16 +30,43 @@ def isTelemarketer(calls, texts):
     telemarketers = []
     not_telemarketers = []
     for call in calls:
-        not_in_texts = True
-        for text in texts:
-            if call[0] in text:
-                not_in_texts = False
-                not_telemarketers.append(call[0])
-        if not_in_texts == True and call[0] not in telemarketers:
-            telemarketers.append(call[0])
-            print("these are the telemarketers " + str(telemarketers))
+        if call[0] not in telemarketers or call[0] not in not_telemarketers:
+            not_in_texts = True
+            for text in texts:
+                if call[0] in text:
+                    not_in_texts = False
+                    not_telemarketers.append(call[0])
+            if not_in_texts == True:
+                telemarketers.append(call[0])
     return telemarketers
 
+
+def noIncomingCalls(calls):
+    telemarketers = []
+    not_telemarketers = []
+    for call in calls:
+        incoming_calls = False
+        for i in range(len(calls)):
+            if call[0] == calls[i][1]:
+                print(call[0])
+                print(calls[i][1])
+                incoming_calls = True
+                not_telemarketers.append(call[0])
+                print("these are not telemarketers " +
+                      str(not_telemarketers))
+                i += 1
+        if incoming_calls == False:
+            telemarketers.append(call[0])
+
+    return telemarketers
+
+
+calls2 = [['1408371123', '98453 94494', '01-09-2016 06:01:12', '186'],
+          ['1408371456', '(022)28952819', '01-09-2016 06:01:59', '2093'],
+          ['97424 22395', '93427 40118', '01-09-2016 06:03:51', '1975'],
+          ['93427 40118', '97424 22395', '01-09-2016 06:11:23', '1156'],
+          ['(080)67362492', '90356 11723', '01-09-2016 07:24:45', '2258'],
+          ['90356 11723', '(080)67362492', '01-09-2016 07:24:45', '2258']]
 
 calls = [['1408371942', '98453 94494', '01-09-2016 06:01:12', '186'],
          ['1408371333', '(022)28952819', '01-09-2016 06:01:59', '2093'],
@@ -55,4 +82,6 @@ texts = [['97424 22395', '97416 29480', '14-09-2016 20:52:17'],
          ['97424 53609', '97385 70012', '14-09-2016 21:01:01'],
          ['93410 56456', '98453 86521', '14-09-2016 21:03:52']]
 
+
 print(isTelemarketer(calls, texts))
+print(noIncomingCalls(calls2))
