@@ -74,17 +74,3 @@ def callsToBangalore(calls):
     percentage = round((count / calls_from_bangalore * 100), 2)
     print(str(percentage) + " percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
     return percentage
-
-
-calls2 = [['(080)33118033', '98453 94494', '01-09-2016 06:01:12', '186'],
-          ['(080)33118033', '(022)28952819', '01-09-2016 06:01:59', '2093'],
-          ['97424 22395', '(022)47410783', '01-09-2016 06:03:51', '1975'],
-          ['93427 40118', '(080)33118033', '01-09-2016 06:11:23', '1156'],
-          ['(080)67362492', '(04344)316423', '01-09-2016 07:24:45', '2258'],
-          ['(080)67362492', '1408371942', '01-09-2016 07:24:45', '2258'],
-          ['(080)33118033', '(022)28952819', '01-09-2016 06:01:59', '2093'],
-          ['(080)33118033', '(080)33118033', '01-09-2016 06:01:12', '186']]
-
-
-print(receivingAreaCodesBangalore(calls2))
-print(callsToBangalore(calls2))
