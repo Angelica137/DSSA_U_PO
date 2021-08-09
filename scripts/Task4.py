@@ -62,32 +62,17 @@ def noIncomingCalls(numbers, calls):
 def findTelemarketers(calls, texts):
     no_texts = notInTexts(calls, texts)
     telemarketers = noIncomingCalls(no_texts, calls)
-    return telemarketers
+    ordered_numbers = sorted(telemarketers)
+    return ordered_numbers
 
 
-calls2 = [['1408371123', '98453 94494', '01-09-2016 06:01:12', '186'],
-          ['1408371456', '(022)28952819', '01-09-2016 06:01:59', '2093'],
-          ['97424 22395', '93427 40118', '01-09-2016 06:03:51', '1975'],
-          ['93427 40118', '97424 22395', '01-09-2016 06:11:23', '1156'],
-          ['(080)67362492', '90356 11723', '01-09-2016 07:24:45', '2258'],
-          ['90356 11723', '(080)67362492', '01-09-2016 07:24:45', '2258']]
+print(findTelemarketers(calls, texts))
 
-calls = [['1408371942', '98453 94494', '01-09-2016 06:01:12', '186'],
-         ['1408371333', '(022)28952819', '01-09-2016 06:01:59', '2093'],
-         ['97424 22395', '(022)47410783', '01-09-2016 06:03:51', '1975'],
-         ['93427 40118', '(080)33118033', '01-09-2016 06:11:23', '1156'],
-         ['(080)67362492', '(04344)316423', '01-09-2016 07:24:45', '2258']]
-
-
-texts = [['97424 22395', '97416 29480', '14-09-2016 20:52:17'],
-         ['93427 40118', '93422 47940', '14-09-2016 20:58:50'],
-         ['90356 11723', '81525 12041', '14-09-2016 20:59:30'],
-         ['90366 36573', '97425 12708', '14-09-2016 21:00:07'],
-         ['97424 53609', '97385 70012', '14-09-2016 21:01:01'],
-         ['93410 56456', '98453 86521', '14-09-2016 21:03:52']]
-
-numbers = notInTexts(calls2, texts)
-
-#print(isTelemarketer(calls, texts))
-print(noIncomingCalls(numbers, calls2))
-print(findTelemarketers(calls2, texts))
+'''
+Answer
+'''
+possible_telemarketers = findTelemarketers(calls, texts)
+copy = "These numbers could be telemarketers: "
+print(copy)
+for elem in possible_telemarketers:
+    print(elem)

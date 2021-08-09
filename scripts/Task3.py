@@ -57,9 +57,6 @@ def receivingAreaCodesBangalore(calls):
             if ' ' in call[1] and call[1][0:call[1].find(' ')] not in area_codes:
                 area_codes.append(call[1][0:call[1].find(' ')])
     area_codes_ordered = sorted(area_codes)
-    print("The numbers called by people in Bangalore have codes:")
-    for elem in area_codes_ordered:
-        print(elem)
     return area_codes_ordered
 
 
@@ -72,5 +69,22 @@ def callsToBangalore(calls):
             if '(080)' in call[1]:
                 count += 1
     percentage = round((count / calls_from_bangalore * 100), 2)
-    print(str(percentage) + " percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
     return percentage
+
+
+'''
+Answer Part A
+'''
+codes = receivingAreaCodesBangalore(calls)
+copyA = "The numbers called by people in Bangalore have codes:"
+print(copyA)
+for elem in codes:
+    print(elem)
+
+
+'''
+Answer part B
+'''
+percentage_bangalore = callsToBangalore(calls)
+copyB = " percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore."
+print(str(percentage_bangalore) + copyB)
