@@ -60,6 +60,25 @@ def receivingAreaCodesBangalore(calls):
     return area_codes_ordered
 
 
+'''
+Big Oh Calculation receivingAreaCodesBangalore(calls):
+
+area_codes = [] -> 1 step
+for call in calls: -> n steps
+    if '(080)' in call[0]: -> O(n)
+        if call[1][0:3] == '140' and '140' not in area_codes: -> O(k) + 1 + O(n)
+            area_codes.append('140') -> 1 step
+        if ')' in call[1] and call[1][0:call[1].find(')') + 1] not in area_codes: -> O(k) + O(k)
+            area_codes.append(call[1][0:call[1].find(')') + 1]) -> 1 step
+        if ' ' in call[1] and call[1][0:call[1].find(' ')] not in area_codes: -> O(k) + O(k)
+            area_codes.append(call[1][0:call[1].find(' ')]) -> 1 step
+area_codes_ordered = sorted(area_codes) -> 1 step
+return area_codes_ordered -> 1 step
+
+Big O = O(n)
+'''
+
+
 def callsToBangalore(calls):
     calls_from_bangalore = 0
     count = 0
@@ -70,6 +89,23 @@ def callsToBangalore(calls):
                 count += 1
     percentage = round((count / calls_from_bangalore * 100), 2)
     return percentage
+
+
+'''
+Big Oh Calculation callsToBangalore(calls):
+
+calls_from_bangalore = 0 -> 1 step
+count = 0 -> 1 step
+for call in calls: -> n steps
+    if '(080)' in call[0]: -> n steps
+        calls_from_bangalore += 1 -> 1 step
+        if '(080)' in call[1]: -> k steps
+            count += 1 -> 1 step
+percentage = round((count / calls_from_bangalore * 100), 2) -> 1 step (docs say todo)
+return percentage -> 1 step
+
+Big O = O(n)
+'''
 
 
 '''
