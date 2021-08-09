@@ -28,14 +28,12 @@ The list of numbers should be print out one per line in lexicographic order with
 
 def isTelemarketer(calls, texts):
     telemarketers = []
-    not_telemarketers = []
     for call in calls:
-        if call[0] not in telemarketers or call[0] not in not_telemarketers:
+        if call[0] not in telemarketers:
             not_in_texts = True
             for text in texts:
                 if call[0] in text:
                     not_in_texts = False
-                    not_telemarketers.append(call[0])
             if not_in_texts == True:
                 telemarketers.append(call[0])
     return telemarketers
@@ -43,22 +41,44 @@ def isTelemarketer(calls, texts):
 
 def noIncomingCalls(calls):
     telemarketers = []
-    not_telemarketers = []
     for call in calls:
         incoming_calls = False
         for i in range(len(calls)):
             if call[0] == calls[i][1]:
-                print(call[0])
-                print(calls[i][1])
                 incoming_calls = True
-                not_telemarketers.append(call[0])
-                print("these are not telemarketers " +
-                      str(not_telemarketers))
                 i += 1
         if incoming_calls == False:
             telemarketers.append(call[0])
-
     return telemarketers
+
+
+def findTelemarketers(calls, texts):
+    telemarketers1 = []
+    telemarketers2 = []
+    for call in calls:
+        if call[0] not in telemarketers1:
+            not_in_texts = True
+            for text in texts:
+                if call[0] in text:
+                    not_in_texts = False
+            if not_in_texts == True:
+                telemarketers1.append(call[0])
+        #print("text loop" + str(telemarketers1))
+
+    for number in telemarketers1:
+        if number not in telemarketers2:
+            incoming_calls = False
+            print(number)
+            for i in range(len(calls)):
+                print(calls[i][1])
+                if number == calls[i][1]:
+                    incoming_calls = True
+                    i += 1
+            if incoming_calls == False and number not in telemarketers2:
+                telemarketers2.append(number)
+                print("call loop" + str(telemarketers2))
+                i += 1
+    return telemarketers2
 
 
 calls2 = [['1408371123', '98453 94494', '01-09-2016 06:01:12', '186'],
@@ -83,5 +103,6 @@ texts = [['97424 22395', '97416 29480', '14-09-2016 20:52:17'],
          ['93410 56456', '98453 86521', '14-09-2016 21:03:52']]
 
 
-print(isTelemarketer(calls, texts))
-print(noIncomingCalls(calls2))
+#print(isTelemarketer(calls, texts))
+# print(noIncomingCalls(calls2))
+print(findTelemarketers(calls2, texts))
