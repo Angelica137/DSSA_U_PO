@@ -29,7 +29,10 @@ def longestCall(calls):
         if minutes > longest_call_mins:
             longest_call_mins = minutes
             longest_call_no = call[0]
-    return longest_call_no
+    answer = str(longest_call_no) + \
+        " spent the longest time, " + str(longest_call_mins) + \
+        " seconds, on the phone during September 2016."
+    return answer
 
 
 print(longestCall(calls))
