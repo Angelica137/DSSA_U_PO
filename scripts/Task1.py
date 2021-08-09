@@ -21,6 +21,10 @@ Print a message:
 
 
 def uniqueNumbers(texts, calls):
+    '''
+    prints how many unique numbers are there in the 
+    both lists
+    '''
     records = texts + calls
     unique_numbers = []
     for record in records:
@@ -32,6 +36,24 @@ def uniqueNumbers(texts, calls):
     uniqueNosMessage = "There are " + str(count_unique_nos) + \
         " different telephone numbers in the records."
     return uniqueNosMessage
+
+
+'''
+Big Oh Calculation uniqueNumbers(texts, calls):
+
+records = texts + calls -> 1 step
+unique_numbers = [] -> 1 step
+for record in records: -> n steps
+    if record[0] not in unique_numbers: -> 1 step
+        unique_numbers.append(record[0]) -> 1 step
+    if record[1] not in unique_numbers: -> 1 step
+        unique_numbers.append(record[1]) -> 1 step
+count_unique_nos = len(unique_numbers) -> 1 step
+uniqueNosMessage = ... -> 1 step
+return uniqueNosMessage -> 1 step
+
+Big O = O(n)
+'''
 
 
 print(uniqueNumbers(texts, calls))

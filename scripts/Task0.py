@@ -38,7 +38,7 @@ def firstText(texts):
 
 
 '''
-Big Oh Calculation .firstText:
+Big Oh Calculation firstText(texts):
 
 incoming = texts[0][0] -> 1 step
 answering = texts[0][1] -> 1 step
@@ -64,7 +64,7 @@ def lastCall(calls):
 
 
 '''
-Big Oh Calculation .lastCall:
+Big Oh Calculation lastCall(calls):
 
 incomingNo = calls[-1][0] -> 1 step
 receiving = calls[-1][1] -> 1 step
