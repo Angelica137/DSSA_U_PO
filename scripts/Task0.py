@@ -26,6 +26,9 @@ Print messages:
 
 
 def firstText(texts):
+    '''
+    Returns the first record of texts
+    '''
     incoming = texts[0][0]
     answering = texts[0][1]
     time = texts[0][2]
@@ -34,11 +37,23 @@ def firstText(texts):
     return result
 
 
-print(firstText(texts))
+'''
+Big Oh Calculation .firstText:
+
+incoming = texts[0][0] -> 1 step
+answering = texts[0][1] -> 1 step
+time = texts[0][2] -> 1 step
+result = ... -> 1 step
+return result -> 1 step
+
+Big O = O(1)
+'''
 
 
-# Print the last record of calls
 def lastCall(calls):
+    '''
+    Print the alst record of calls
+    '''
     incomingNo = calls[-1][0]
     receiving = calls[-1][1]
     time = calls[-1][2]
@@ -48,4 +63,23 @@ def lastCall(calls):
     return resultCall
 
 
+'''
+Big Oh Calculation .lastCall:
+
+incomingNo = calls[-1][0] -> 1 step
+receiving = calls[-1][1] -> 1 step
+time = calls[-1][2] -> 1 step
+duration = calls[-1][3] - 1 step
+resultCall = ... -> 1 step
+return resultCall -> 1 step
+
+Big O = O(1)
+'''
+
+
+'''
+Print statements Task0
+'''
+
+print(firstText(texts))
 print(lastCall(calls))
