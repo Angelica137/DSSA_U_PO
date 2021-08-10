@@ -29,11 +29,8 @@ def firstText(texts):
     '''
     Returns the first record of texts
     '''
-    incoming = texts[0][0]
-    answering = texts[0][1]
-    time = texts[0][2]
     result = "First record of texts, {} texts {} at time {}".format(
-        incoming, answering, time)
+        texts[0][0], texts[0][1], texts[0][2])
     return result
 
 
