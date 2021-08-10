@@ -49,12 +49,8 @@ def lastCall(calls):
     '''
     Print the alst record of calls
     '''
-    incomingNo = calls[-1][0]
-    receiving = calls[-1][1]
-    time = calls[-1][2]
-    duration = calls[-1][3]
     resultCall = "Last record of calls, {} calls {} at time {}, lasting {} seconds".format(
-        incomingNo, receiving, time, duration)
+        calls[-1][0], calls[-1][1], calls[-1][2], calls[-1][3])
     return resultCall
 
 
