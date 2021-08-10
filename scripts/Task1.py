@@ -32,9 +32,9 @@ def uniqueNumbers(texts, calls):
         numbers.append(record[1])  # 1 step
     unique_numbers = set(numbers)  # 1 step
     count_unique_nos = len(unique_numbers)  # 1 step
-    uniqueNosMessage = "There are " + str(count_unique_nos) + \
+    uniqueNosCopy = "There are " + str(count_unique_nos) + \
         " different telephone numbers in the records."  # 1 step
-    return uniqueNosMessage  # 1 step
+    return uniqueNosCopy  # 1 step
 
 
 '''
