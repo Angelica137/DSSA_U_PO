@@ -25,17 +25,17 @@ def longestCall(calls):
     '''
     returns the number that had the longest call and how long the call was
     '''
-    longest_call_secs = 0
-    longest_call_no = ''
+    call_times = {}
     for call in calls:
-        secs = int(call[3])
-        if secs > longest_call_secs:
-            longest_call_secs = secs
-            longest_call_no = call[0]
-    answer = str(longest_call_no) + \
-        " spent the longest time, " + str(longest_call_secs) + \
-        " seconds, on the phone during September 2016."
-    return answer
+        if call[0] not in call_times:  # O(n)
+            call_times[call[0]] = int(call[3])  # 1 step + O(n)
+        else:
+            call_times[call[0]] += int(call[3])  # 1 step + O(n)
+    max_time = max(call_times.values())  # O(n)
+    number = [k for k, v in call_times.items() if v == max_time][0]  # O(n) + 1
+    copy = "{} spent the longest time, {} seconds, on the phone during September 2016."  # 1 step
+    answer_task2 = copy.format(number, max_time)  # 1 + step
+    return answer_task2  # 1 step
 
 
 '''
@@ -55,4 +55,15 @@ Big O = O(n) + O(n) = O(n)
 '''
 
 
-print(longestCall(calls))
+calls1 = [['78130 00821', '98453 94494', '01-09-2016 06:01:12', '186'],
+          ['78298 91466', '(022)28952819', '01-09-2016 06:01:59', '2093'],
+          ['97424 22395', '(022)47410783', '01-09-2016 06:03:51', '1975']]
+
+
+calls2 = [['78130 00821', '98453 94494', '01-09-2016 06:01:12', '500'],
+          ['78298 91466', '(022)28952819', '01-09-2016 06:01:59', '2093'],
+          ['97424 22395', '(022)47410783', '01-09-2016 06:03:51', '1975'],
+          ['97424 22395', '(022)47410783', '01-09-2016 06:03:51', '1975']]
+
+
+print(longestCall(calls2))

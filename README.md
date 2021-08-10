@@ -33,3 +33,8 @@ In Tasks 3 and 4, you can use in-built methods `sorted()` or `list.sort()` f
 
 ### References:
 https://blog.finxter.com/python-list-to-set/#:~:text=The%20time%20complexity%20of%20converting,which%20is%20O(1).
+
+
+https://stackoverflow.com/questions/42044090/return-the-maximum-value-from-a-dictionary/42044202
+
+https://www.geeksforgeeks.org/complexity-cheat-sheet-for-python-operations/
