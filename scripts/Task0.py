@@ -32,8 +32,8 @@ def firstText(texts):
     incoming = texts[0][0]
     answering = texts[0][1]
     time = texts[0][2]
-    result = "First record of texts, " + incoming + \
-        " texts " + answering + " at time " + time
+    result = "First record of texts, {} texts {} at time {}".format(
+        incoming, answering, time)
     return result
 
 
