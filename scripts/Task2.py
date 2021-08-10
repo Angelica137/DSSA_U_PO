@@ -25,15 +25,15 @@ def longestCall(calls):
     '''
     returns the number that had the longest call and how long the call was
     '''
-    longest_call_mins = 0
+    longest_call_secs = 0
     longest_call_no = ''
     for call in calls:
-        minutes = int(call[3])
-        if minutes > longest_call_mins:
-            longest_call_mins = minutes
+        secs = int(call[3])
+        if secs > longest_call_secs:
+            longest_call_secs = secs
             longest_call_no = call[0]
     answer = str(longest_call_no) + \
-        " spent the longest time, " + str(longest_call_mins) + \
+        " spent the longest time, " + str(longest_call_secs) + \
         " seconds, on the phone during September 2016."
     return answer
 
