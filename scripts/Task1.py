@@ -30,7 +30,6 @@ def uniqueNumbers(texts, calls):
     for record in records:  # n steps
         unique_numbers.add(record[0])  # 1 step
         unique_numbers.add(record[1])  # 1 step
-    # unique_numbers = set(numbers)  # 1 step
     count_unique_nos = len(unique_numbers)  # 1 step
     uniqueNosCopy = "There are " + str(count_unique_nos) + \
         " different telephone numbers in the records."  # 1 step
