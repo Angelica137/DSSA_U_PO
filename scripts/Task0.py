@@ -22,8 +22,6 @@ Print messages:
 "Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds"
 """
 
-# Print the first record of texts
-
 
 def firstText(texts):
     '''
@@ -55,8 +53,8 @@ def lastCall(calls):
     receiving = calls[-1][1]
     time = calls[-1][2]
     duration = calls[-1][3]
-    resultCall = "Last record of calls, " + incomingNo + " calls " + \
-        receiving + " at time " + time + ", lasting " + duration + " seconds"
+    resultCall = "Last record of calls, {} calls {} at time {}, lasting {} seconds".format(
+        incomingNo, receiving, time, duration)
     return resultCall
 
 
