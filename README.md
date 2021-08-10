@@ -31,3 +31,5 @@ In Tasks 3 and 4, you can use in-built methods `sorted()` or `list.sort()` f
 
 **Once you have completed your solution for each problem, perform a run time analysis** (Worst Case Big-O Notation) of your solution. Document this for each problem and include this in your submission.
 
+References:
+https://blog.finxter.com/how-to-remove-duplicates-from-a-python-list-of-lists/

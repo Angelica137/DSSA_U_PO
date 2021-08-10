@@ -25,17 +25,16 @@ def uniqueNumbers(texts, calls):
     prints how many unique numbers are there in the 
     both lists
     '''
-    records = texts + calls
-    unique_numbers = []
-    for record in records:
-        if record[0] not in unique_numbers:
-            unique_numbers.append(record[0])
-        if record[1] not in unique_numbers:
-            unique_numbers.append(record[1])
-    count_unique_nos = len(unique_numbers)
+    records = texts + calls  # 1 step
+    numbers = []  # 1 step
+    for record in records:  # n steps
+        numbers.append(record[0])  # 1 step
+        numbers.append(record[1])  # 1 step
+    unique_numbers = set(numbers)  # 1 step
+    count_unique_nos = len(unique_numbers)  # 1 step
     uniqueNosMessage = "There are " + str(count_unique_nos) + \
-        " different telephone numbers in the records."
-    return uniqueNosMessage
+        " different telephone numbers in the records."  # 1 step
+    return uniqueNosMessage  # 1 step
 
 
 '''
@@ -44,7 +43,7 @@ Big Oh Calculation uniqueNumbers(texts, calls):
 records = texts + calls -> 1 step
 unique_numbers = [] -> 1 step
 for record in records: -> n steps
-    if record[0] not in unique_numbers: -> 1 step
+    if record[0] not in unique_numbers: -> n steps
         unique_numbers.append(record[0]) -> 1 step
     if record[1] not in unique_numbers: -> 1 step
         unique_numbers.append(record[1]) -> 1 step
@@ -52,8 +51,27 @@ count_unique_nos = len(unique_numbers) -> 1 step
 uniqueNosMessage = ... -> 1 step
 return uniqueNosMessage -> 1 step
 
-Big O = O(n)
+Big O = O(n^2)
 '''
 
 
 print(uniqueNumbers(texts, calls))
+
+
+list_one = [[1, 2], [3, 4]]
+
+list_two = [[1, 2], [3, 4, 5]]
+
+sum_list = list_one + list_two
+dup_free = []
+dup_free_set = set()
+for x in sum_list:
+    t = tuple(x)
+    if t not in dup_free_set:
+        dup_free.append(x)
+        dup_free_set.add(t)
+
+print(dup_free)
+
+#sum_set = set(sum_list)
+# print(sum_set)
