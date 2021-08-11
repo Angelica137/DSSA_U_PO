@@ -36,22 +36,4 @@ def uniqueNumbers(texts, calls):
     return uniqueNosCopy  # 1 step
 
 
-'''
-Big Oh Calculation uniqueNumbers(texts, calls):
-
-records = texts + calls -> 1 step
-unique_numbers = [] -> 1 step
-for record in records: -> n steps
-    if record[0] not in unique_numbers: -> n steps
-        unique_numbers.append(record[0]) -> 1 step
-    if record[1] not in unique_numbers: -> 1 step
-        unique_numbers.append(record[1]) -> 1 step
-count_unique_nos = len(unique_numbers) -> 1 step
-uniqueNosMessage = ... -> 1 step
-return uniqueNosMessage -> 1 step
-
-Big O = O(n^2)
-'''
-
-
 print(uniqueNumbers(texts, calls))
