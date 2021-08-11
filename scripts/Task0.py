@@ -32,19 +32,6 @@ def firstText(texts):
     return result
 
 
-'''
-Big Oh Calculation firstText(texts):
-
-incoming = texts[0][0] -> 1 step
-answering = texts[0][1] -> 1 step
-time = texts[0][2] -> 1 step
-result = ... -> 1 step
-return result -> 1 step
-
-Big O = O(1)
-'''
-
-
 def lastCall(calls):
     '''
     Print the alst record of calls
@@ -55,21 +42,7 @@ def lastCall(calls):
 
 
 '''
-Big Oh Calculation lastCall(calls):
-
-incomingNo = calls[-1][0] -> 1 step
-receiving = calls[-1][1] -> 1 step
-time = calls[-1][2] -> 1 step
-duration = calls[-1][3] - 1 step
-resultCall = ... -> 1 step
-return resultCall -> 1 step
-
-Big O = O(1)
-'''
-
-
-'''
-Print statements Task0
+Answer Task0
 '''
 
 print(firstText(texts))
