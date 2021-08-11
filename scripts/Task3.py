@@ -80,14 +80,16 @@ Big O = O(n)
 
 
 def callsToBangalore(calls):
-    calls_from_bangalore = 0
-    count = 0
+    area_codes = []
     for call in calls:
         if '(080)' in call[0]:
-            calls_from_bangalore += 1
-            if '(080)' in call[1]:
-                count += 1
-    percentage = round((count / calls_from_bangalore * 100), 2)
+            if call[1][0:3] == '140':
+                area_codes.append('140')
+            if ')' in call[1]:
+                area_codes.append(call[1][0:call[1].find(')') + 1])
+            if ' ' in call[1]:
+                area_codes.append(call[1][0:4])
+    percentage = round((area_codes.count('(080)')/len(area_codes) * 100), 2)
     return percentage
 
 
