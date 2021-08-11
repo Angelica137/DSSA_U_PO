@@ -38,21 +38,4 @@ def longestCall(calls):
     return answer_task2  # 1 step
 
 
-'''
-Big Oh Calculation longestCall(calls):
-
-longest_call_mins = 0 -> 1 step
-longest_call_no = '' -> 1 step
-for call in calls: -> n steps
-    minutes = int(call[3]) -> n steps
-    if minutes > longest_call_mins: -> 1step
-        longest_call_mins = minutes -> 1 step
-        longest_call_no = call[0] -> 1 step
-answer = ... -> 1 step
-return answer -> 1 step
-
-Big O = O(n) + O(n) = O(n)
-'''
-
-
 print(longestCall(calls))
