@@ -39,6 +39,8 @@ https://stackoverflow.com/questions/42044090/return-the-maximum-value-from-a-dic
 
 https://www.geeksforgeeks.org/complexity-cheat-sheet-for-python-operations/
 
+https://note.nkmk.me/en/python-function-return-multiple-values/
+
 
 ## Still to do
 Raise exceptions, specially look at task 3
