@@ -1,4 +1,4 @@
-from scripts.Task4 import notInTexts, noIncomingCalls, findTelemarketers
+from scripts.Task4 import find_telemarketers
 
 
 calls = [['1408371942', '98453 94494', '01-09-2016 06:01:12', '186'],
@@ -25,15 +25,5 @@ calls2 = [['1408371123', '98453 94494', '01-09-2016 06:01:12', '186'],
           ['90356 11723', '(080)67362492', '01-09-2016 07:24:45', '2258']]
 
 
-def test_notInTexts_returns_not_in_text_file():
-    assert notInTexts(calls, texts) == [
-        '1408371942', '1408371333', '(080)67362492']
-
-
-def test_noIncomingCalls_returns_not_incoming_calls():
-    numbers = notInTexts(calls2, texts)
-    assert noIncomingCalls(numbers, calls2) == ['1408371123', '1408371456']
-
-
 def test_findTelemarketers_returns_telemarketers():
-    assert findTelemarketers(calls2, texts) == ['1408371123', '1408371456']
+    assert find_telemarketers(calls2, texts) == ['1408371123', '1408371456']
