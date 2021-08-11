@@ -38,3 +38,9 @@ https://blog.finxter.com/python-list-to-set/#:~:text=The%20time%20complexity%20o
 https://stackoverflow.com/questions/42044090/return-the-maximum-value-from-a-dictionary/42044202
 
 https://www.geeksforgeeks.org/complexity-cheat-sheet-for-python-operations/
+
+
+## Still to do
+Raise exceptions, specially look at task 3
+
+Can I use __main__?

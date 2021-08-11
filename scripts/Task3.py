@@ -79,7 +79,7 @@ Big O = O(n)
 '''
 
 
-def callsToBangalore(calls):
+def callsFromBangalore(calls):
     area_codes = []
     for call in calls:  # O(n)
         if '(080)' in call[0]:
@@ -89,9 +89,11 @@ def callsToBangalore(calls):
                 area_codes.append(call[1][0:call[1].find(')') + 1])
             if ' ' in call[1]:
                 area_codes.append(call[1][0:4])
+    unique_codes = set(area_codes)
+    sort_codes = sorted(unique_codes)
     bangalore_pc = round(
         (area_codes.count('(080)')/len(area_codes) * 100), 2)  # O(1)
-    return bangalore_pc  # O(1)
+    return sort_codes, bangalore_pc  # O(1)
 
 
 '''
@@ -124,6 +126,8 @@ for elem in codes:
 '''
 Answer part B
 '''
-percentage_bangalore = callsToBangalore(calls)
-copyB = " percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore."
-print(str(percentage_bangalore) + copyB)
+
+
+test = callsFromBangalore(calls)
+print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(
+    test[1]))
