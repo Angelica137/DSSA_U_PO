@@ -46,41 +46,8 @@ The percentage should have 2 decimal digits
 """
 
 
-def receivingAreaCodesBangalore(calls):
-    area_codes = []
-    for call in calls:
-        if '(080)' in call[0]:
-            if call[1][0:3] == '140' and '140' not in area_codes:
-                area_codes.append('140')
-            if ')' in call[1] and call[1][0:call[1].find(')') + 1] not in area_codes:
-                area_codes.append(call[1][0:call[1].find(')') + 1])
-            if ' ' in call[1] and call[1][0:4] not in area_codes:
-                area_codes.append(call[1][0:4])
-    area_codes_ordered = sorted(area_codes)
-    return area_codes_ordered
-
-
-'''
-Big Oh Calculation receivingAreaCodesBangalore(calls):
-
-area_codes = [] -> 1 step
-for call in calls: -> n steps
-    if '(080)' in call[0]: -> O(n)
-        if call[1][0:3] == '140' and '140' not in area_codes: -> O(k) + 1 + O(n)
-            area_codes.append('140') -> 1 step
-        if ')' in call[1] and call[1][0:call[1].find(')') + 1] not in area_codes: -> O(k) + O(k)
-            area_codes.append(call[1][0:call[1].find(')') + 1]) -> 1 step
-        if ' ' in call[1] and call[1][0:call[1].find(' ')] not in area_codes: -> O(k) + O(k)
-            area_codes.append(call[1][0:call[1].find(' ')]) -> 1 step
-area_codes_ordered = sorted(area_codes) -> O(nlogn)
-return area_codes_ordered -> 1 step
-
-Big O = O(n)
-'''
-
-
 def callsFromBangalore(calls):
-    area_codes = []
+    area_codes = []  # O(1)
     for call in calls:  # O(n)
         if '(080)' in call[0]:
             if call[1][0:3] == '140':  # O(1)
@@ -89,37 +56,22 @@ def callsFromBangalore(calls):
                 area_codes.append(call[1][0:call[1].find(')') + 1])
             if ' ' in call[1]:
                 area_codes.append(call[1][0:4])
-    unique_codes = set(area_codes)
-    sort_codes = sorted(unique_codes)
+    unique_codes = set(area_codes)  # O(1)
+    sort_codes = sorted(unique_codes)  # O(n log n)
     bangalore_pc = round(
         (area_codes.count('(080)')/len(area_codes) * 100), 2)  # O(1)
     return sort_codes, bangalore_pc  # O(1)
 
 
-'''
-Big Oh Calculation callsToBangalore(calls):
-
-calls_from_bangalore = 0 -> 1 step
-count = 0 -> 1 step
-for call in calls: -> n steps
-    if '(080)' in call[0]: -> n steps
-        calls_from_bangalore += 1 -> 1 step
-        if '(080)' in call[1]: -> k steps
-            count += 1 -> 1 step
-percentage = round((count / calls_from_bangalore * 100), 2) -> 1 step (docs say todo)
-return percentage -> 1 step
-
-Big O = O(n)
-'''
-
+answers = callsFromBangalore(calls)
 
 '''
 Answer Part A
 '''
-codes = receivingAreaCodesBangalore(calls)
-copyA = "The numbers called by people in Bangalore have codes:"
-print(copyA)
-for elem in codes:
+
+copy_a = "The numbers called by people in Bangalore have codes:"
+print(copy_a)
+for elem in answers[0]:
     print(elem)
 
 
@@ -127,7 +79,5 @@ for elem in codes:
 Answer part B
 '''
 
-
-test = callsFromBangalore(calls)
 print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(
-    test[1]))
+    answers[1]))
