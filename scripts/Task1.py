@@ -55,22 +55,3 @@ Big O = O(n^2)
 
 
 print(uniqueNumbers(texts, calls))
-
-
-list_one = [[1, 2], [3, 4]]
-
-list_two = [[1, 2], [3, 4, 5]]
-
-sum_list = list_one + list_two
-dup_free = []
-dup_free_set = set()
-for x in sum_list:
-    t = tuple(x)
-    if t not in dup_free_set:
-        dup_free.append(x)
-        dup_free_set.add(t)
-
-print(dup_free)
-
-#sum_set = set(sum_list)
-# print(sum_set)
