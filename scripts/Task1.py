@@ -20,7 +20,7 @@ Print a message:
 """
 
 
-def uniqueNumbers(texts, calls):
+def unique_numbers(texts, calls):
     '''
     prints how many unique numbers are there in the 
     both lists
@@ -36,4 +36,4 @@ def uniqueNumbers(texts, calls):
     return uniqueNosCopy  # 1 step
 
 
-print(uniqueNumbers(texts, calls))
+print(unique_numbers(texts, calls))

@@ -21,7 +21,7 @@ September 2016.".
 """
 
 
-def longestCall(calls):
+def longest_call(calls):
     '''
     returns the number that had the longest call and how long the call was
     '''
@@ -38,4 +38,4 @@ def longestCall(calls):
     return answer_task2  # 1 step
 
 
-print(longestCall(calls))
+print(longest_call(calls))

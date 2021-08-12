@@ -1,4 +1,4 @@
-from scripts.Task3 import callsFromBangalore
+from scripts.Task3 import calls_from_bangalore
 
 calls = [['78130 00821', '98453 94494', '01-09-2016 06:01:12', '186'],
          ['78298 91466', '(022)28952819', '01-09-2016 06:01:59', '2093'],
@@ -28,16 +28,16 @@ def test_receivingAreaCodesBangalore_returns_empty():
 '''
 
 
-def test_callsFromBangalore_returns_calls1():
-    test = callsFromBangalore(calls1)
+def test_calls_from_bangalore_returns_calls1():
+    test = calls_from_bangalore(calls1)
     assert(test[0]) == ['9845']
 
 
-def test_callsFromBangalore_returns_calls2():
-    test = callsFromBangalore(calls2)
+def test_calls_from_bangalore_returns_calls2():
+    test = calls_from_bangalore(calls2)
     assert(test[0]) == ['(022)', '(04344)', '(080)', '140', '9845']
 
 
-def test_callsFromBangalore_returns_calls_to_Bangalore():
-    test = callsFromBangalore(calls2)
+def test_calls_from_bangalore_returns_calls_to_Bangalore():
+    test = calls_from_bangalore(calls2)
     assert(test[1]) == 16.67

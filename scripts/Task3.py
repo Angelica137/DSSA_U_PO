@@ -46,7 +46,7 @@ The percentage should have 2 decimal digits
 """
 
 
-def callsFromBangalore(calls):
+def calls_from_bangalore(calls):
     area_codes = []  # O(1)
     for call in calls:  # O(n)
         if '(080)' in call[0]:  # O(nm)
@@ -64,7 +64,7 @@ def callsFromBangalore(calls):
     return sort_codes, bangalore_pc  # O(1)
 
 
-answers = callsFromBangalore(calls)
+answers = calls_from_bangalore(calls)
 
 '''
 Answer Part A

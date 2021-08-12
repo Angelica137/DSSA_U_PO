@@ -27,7 +27,7 @@ it should be O(n)
 
 * Worst case complexity uniqueNumbers(texts, calls): O(n)
 * Algorithm
-		* create records variable and store both lists in it (complexity: O(1) + O(1))
+		* initialise records variable and store both lists in it (complexity: O(1) + O(1))
 		* initialise empty set (complexity: O(1))
 		* map through records and add phone nos to set (complexity: O(n) + O(1) + O(1))
 		* get length of set (complexity: O(1))
@@ -40,7 +40,7 @@ it should be O(n)
 
 * Worst case complexity longestCall(calls): O(n^2)
 * Algorithm
-		* create an empty dictionary (complexity: O(1))
+		* initialise an empty dictionary (complexity: O(1))
 		* map through calls (complexity: O(n))
 		* search dictionary for call (complexity: O(n))
     		if found:
@@ -58,9 +58,28 @@ it should be O(n)
 
 -> Task 3
 
-* Worst case complexity callsFromBangalore(calls): O(nlogn)
+* Worst case complexity calls_from_bangalore(calls): O(nlogn)
 * Algorithm
-		* create an empty list (complexity: O(1))
+		* initialise an empty list (complexity: O(1))
+		* map through calls (complexity: O(n))
+		    * search substring in call (complexity: O(nm))
+        		* add area code to list (complexity: O(1))
+				* search substring in call (complexity: O(nm))
+    		    * add area code to list (complexity: O(1) + O(k) + O(nm) + O(1))
+        * search substring in call (complexity: O(nm))
+				    * add area code to list (complexity: O(1))
+    * initialise set of unique codes (complexity: O(1))
+    * sort set of unique codes (complexity: O(nlogn))
+		* calcualte percentage of calls within bangalore (complexity: O(1))
+    * return statement (complexity: O(1))
+
+
+-> Task 4
+
+* Worst case complexity find_telemarketers(calls, texts): 
+* Algorithm
+		* initialise an empty set (complexity: O(1))
+		* initialise an empty set (complexity: O(1))
 		* map through calls (complexity: O(n))
 		    * search substring in call (complexity: O(nm))
         		* add area code to list (complexity: O(1))
@@ -72,37 +91,3 @@ it should be O(n)
     * sort set of unique codes (complexity: O(nlogn))
 		* calcualte percentage of calls within bangalore (complexity: O(1))
     * return statement (complexity: O(1))
-
-
--> Task 4
-
-Big Oh Calculation notInTexts(calls, texts):
-
-no_texts = [] -> 1 step
-for call in calls: -> n steps
-    if call[0] not in no_texts: -> n steps
-        not_in_texts = True = 1 step
-        for text in texts: -> n steps
-            if call[0] in text: -> n steps
-                not_in_texts = False -> 1 step
-        if not_in_texts == True: -> 1 step
-            no_texts.append(call[0]) -> 1 step
-return no_texts
-
-Big O = O(n^2)
-
-
-Big Oh Calculation noIncomingCalls(numbers, calls):
-
-no_incoming_calls = [] -> 1 step
-for number in numbers: -> n steps
-    incoming_calls = False -> 1 step
-    for i in range(len(calls)): -> n steps
-        if number == calls[i][1]: -> 1 step
-            incoming_calls = True -> 1 step
-            i += 1 -> 1 step
-    if incoming_calls == False and number not in no_incoming_calls: -> 1 step + k steps
-        no_incoming_calls.append(number) -> 1 step
-return no_incoming_calls -> step
-
-Big O = O(n^2)
