@@ -23,7 +23,7 @@ Print messages:
 """
 
 
-def firstText(texts):
+def first_text(texts):
     '''
     Returns the first record of texts
     '''
@@ -32,7 +32,7 @@ def firstText(texts):
     return result  # O(1)
 
 
-def lastCall(calls):
+def last_call(calls):
     '''
     Print the alst record of calls
     '''
@@ -45,5 +45,5 @@ def lastCall(calls):
 Answer Task0
 '''
 
-print(firstText(texts))
-print(lastCall(calls))
+print(first_text(texts))
+print(last_call(calls))
