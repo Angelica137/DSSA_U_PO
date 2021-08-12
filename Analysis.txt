@@ -1,14 +1,14 @@
 -> Task 0
 
-Big Oh Calculation firstText(texts):
+* Worst case complexity firstText(texts): O(1)
+* Algorithm
+		* initialise results variable (complexity: O(1))
+		* access list element (complexity: O(1))
+		* access list element (complexity: O(1))
+		* access list element (complexity: O(1))
+    * return result (complexity: O(1))
+    
 
-incoming = texts[0][0] -> 1 step
-answering = texts[0][1] -> 1 step
-time = texts[0][2] -> 1 step
-result = ... -> 1 step
-return result -> 1 step
-
-Big O = O(1)
 
 
 Big Oh Calculation lastCall(calls):
