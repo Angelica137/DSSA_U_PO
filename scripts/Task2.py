@@ -23,7 +23,7 @@ September 2016.".
 
 def longest_call(calls):
     '''
-    returns the number that had the longest call and how long the call was
+    returns the number that spent the longest time on the phone this period
     '''
     call_times = {}  # O(1)
     for call in calls:  # O(n)
@@ -39,3 +39,14 @@ def longest_call(calls):
 
 
 print(longest_call(calls))
+
+
+calls4 = [['78130 00821', '98453 94494', '01-09-2016 06:01:12', '500'],
+          ['78298 91466', '(022)28952819', '01-09-2016 06:01:59', '2093'],
+          ['(022)47410783', '98453 94494', '01-09-2016 06:01:12', '3000'],
+          ['97424 22395', '(022)47410783', '01-09-2016 06:03:51', '1975'],
+          ['97424 22395', '(022)47410783', '01-09-2016 06:03:51', '1975'],
+          ['(080)33251027', '98453 94494', '01-09-2016 06:01:12', '5000']]
+
+
+print(longest_call(calls4))
