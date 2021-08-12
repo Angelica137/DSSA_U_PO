@@ -37,11 +37,11 @@ def test_longest_call_returns_calls2():
         calls2) == "97424 22395 spent the longest time, 3950 seconds, on the phone during September 2016."
 
 
-def test_longest_call_returns_calls2():
+def test_longest_call_returns_calls3():
     assert longest_call(
-        calls3) == "(080)33251027 spent the longest time, 10000 seconds, on the phone during September 2016."
+        calls3) == "98453 94494 spent the longest time, 10500 seconds, on the phone during September 2016."
 
 
-def test_longest_call_returns_calls2():
+def test_longest_call_returns_calls4():
     assert longest_call(
         calls4) == "98453 94494 spent the longest time, 8500 seconds, on the phone during September 2016."

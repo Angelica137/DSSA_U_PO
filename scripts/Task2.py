@@ -26,16 +26,28 @@ def longest_call(calls):
     returns the number that spent the longest time on the phone this period
     '''
     call_times = {}  # O(1)
+    count = 0
     for call in calls:  # O(n)
-        if call[0] not in call_times:  # O(n)
-            call_times[call[0]] = int(call[3])  # 1 step + O(n)
-        if call[1] not in call_times:  # O(n)
-            call_times[call[1]] = int(call[3])  # 1 step + O(n)
-        elif call[1] in call_times:  # O(n)
-            call_times[call[1]] += int(call[3])  # 1 step + O(n)
-        else:
+        if call[0] in call_times:  # O(n)
             call_times[call[0]] += int(call[3])  # 1 step + O(n)
-        print(call_times)
+            # print('a')
+            count += 1
+        if call[1] in call_times:  # O(n)
+            call_times[call[1]] += int(call[3])  # 1 step + O(n)
+            # print('b')
+            count += 1
+        else:
+            if call[0] not in call_times:  # O(n)
+                call_times[call[0]] = int(call[3])  # 1 step + O(n)
+                # print('c')
+                count += 1
+            if call[1] not in call_times:
+                call_times[call[1]] = int(call[3])  # 1 step + O(n)
+                # print('d')
+                count += 1
+        #print("round " + str(count))
+        # print(call_times)
+
     max_time = max(call_times.values())  # O(n)
     number = [k for k, v in call_times.items() if v == max_time][0]  # O(n) + 1
     copy = "{} spent the longest time, {} seconds, on the phone during September 2016."  # 1 step
@@ -43,7 +55,7 @@ def longest_call(calls):
     return answer_task2  # 1 step
 
 
-# print(longest_call(calls))
+print(longest_call(calls))
 
 
 calls4 = [['78130 00821', '98453 94494', '01-09-2016 06:01:12', '500'],
