@@ -49,13 +49,14 @@ The percentage should have 2 decimal digits
 def callsFromBangalore(calls):
     area_codes = []  # O(1)
     for call in calls:  # O(n)
-        if '(080)' in call[0]:
-            if call[1][0:3] == '140':  # O(1)
-                area_codes.append('140')
-            if ')' in call[1]:
+        if '(080)' in call[0]:  # O(nm)
+            if call[1][0:3] == '140':  # O(nm)
+                area_codes.append('140')  # O(1)
+            if ')' in call[1]:  # O(nm)
+                # O(1) + O(k) + O(nm) + O(1)
                 area_codes.append(call[1][0:call[1].find(')') + 1])
-            if ' ' in call[1]:
-                area_codes.append(call[1][0:4])
+            if ' ' in call[1]:  # O(nm)
+                area_codes.append(call[1][0:4])  # O(1)
     unique_codes = set(area_codes)  # O(1)
     sort_codes = sorted(unique_codes)  # O(n log n)
     bangalore_pc = round(

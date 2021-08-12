@@ -1,25 +1,27 @@
 -> Task 0
 
-* Worst case complexity firstText(texts): O(1)
+* Worst case complexity firstText(texts): O(n)
 * Algorithm
 		* initialise results variable (complexity: O(1))
 		* access list element (complexity: O(1))
 		* access list element (complexity: O(1))
 		* access list element (complexity: O(1))
+		* use .format() to add vars to string (complexity: O(n))
     * return result (complexity: O(1))
     
 
-* Worst case complexity lastCall(calls): O(1)
+* Worst case complexity lastCall(calls): O(n)
 * Algorithm
-		* initialise results variable (complexity: O(1))
+		* initialise results variable (complexity: O(n))
 		* access list element (complexity: O(1))
 		* access list element (complexity: O(1))
 		* access list element (complexity: O(1))
+		* use .format() to add vars to string (complexity: O(n))
     * return result (complexity: O(1))
 
 
 I am not sure about the time complexity of .format(), I think 
-it could be O(n)
+it should be O(n)
 
 -> Task 1
 
@@ -36,11 +38,11 @@ it could be O(n)
 
 -> Task 2
 
-* Worst case complexity longestCall(calls): O(n)
+* Worst case complexity longestCall(calls): O(n^2)
 * Algorithm
 		* create an empty dictionary (complexity: O(1))
 		* map through calls (complexity: O(n))
-		* search dictionary for call (complexity: O(1))
+		* search dictionary for call (complexity: O(n))
     		if found:
     		* add key value pair to dictionary (complexity: O(1))
 				* transform string to int (complexity: O(n))
@@ -53,55 +55,23 @@ it could be O(n)
     * store copy with variables using .format in variable (complexity: O(1) + O(n))
     * return statement (complexity: O(1))
 
-Big Oh Calculation longestCall(calls):
-
-longest_call_mins = 0 -> 1 step
-longest_call_no = '' -> 1 step
-for call in calls: -> n steps
-    minutes = int(call[3]) -> n steps
-    if minutes > longest_call_mins: -> 1step
-        longest_call_mins = minutes -> 1 step
-        longest_call_no = call[0] -> 1 step
-answer = ... -> 1 step
-return answer -> 1 step
-
-Big O = O(n) + O(n) = O(n)
-
-
 
 -> Task 3
 
-Big Oh Calculation receivingAreaCodesBangalore(calls):
-
-area_codes = [] -> 1 step
-for call in calls: -> n steps
-    if '(080)' in call[0]: -> O(n)
-        if call[1][0:3] == '140' and '140' not in area_codes: -> O(k) + 1 + O(n)
-            area_codes.append('140') -> 1 step
-        if ')' in call[1] and call[1][0:call[1].find(')') + 1] not in area_codes: -> O(k) + O(k)
-            area_codes.append(call[1][0:call[1].find(')') + 1]) -> 1 step
-        if ' ' in call[1] and call[1][0:call[1].find(' ')] not in area_codes: -> O(k) + O(k)
-            area_codes.append(call[1][0:call[1].find(' ')]) -> 1 step
-area_codes_ordered = sorted(area_codes) -> O(nlogn)
-return area_codes_ordered -> 1 step
-
-Big O = O(n)
-
-
-Big Oh Calculation callsToBangalore(calls):
-
-calls_from_bangalore = 0 -> 1 step
-count = 0 -> 1 step
-for call in calls: -> n steps
-    if '(080)' in call[0]: -> n steps
-        calls_from_bangalore += 1 -> 1 step
-        if '(080)' in call[1]: -> k steps
-            count += 1 -> 1 step
-percentage = round((count / calls_from_bangalore * 100), 2) -> 1 step (docs say todo)
-return percentage -> 1 step
-
-Big O = O(n)
-
+* Worst case complexity callsFromBangalore(calls): O(nlogn)
+* Algorithm
+		* create an empty list (complexity: O(1))
+		* map through calls (complexity: O(n))
+		    * search substring in call (complexity: O(nm))
+        		* add area code to list (complexity: O(1))
+				* search substring in call (complexity: O(nm))
+    		    * add area code to list (complexity: O(1) + O(k) + O(nm) + O(1))
+        * search substring in call (complexity: O(nm))
+				    * add area code to list (complexity: O(1))
+    * create set of unique codes (complexity: O(1))
+    * sort set of unique codes (complexity: O(nlogn))
+		* calcualte percentage of calls within bangalore (complexity: O(1))
+    * return statement (complexity: O(1))
 
 
 -> Task 4

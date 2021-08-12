@@ -27,7 +27,7 @@ def longestCall(calls):
     '''
     call_times = {}  # O(1)
     for call in calls:  # O(n)
-        if call[0] not in call_times:  # O(1)
+        if call[0] not in call_times:  # O(n)
             call_times[call[0]] = int(call[3])  # 1 step + O(n)
         else:
             call_times[call[0]] += int(call[3])  # 1 step + O(n)

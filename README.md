@@ -41,7 +41,9 @@ https://www.geeksforgeeks.org/complexity-cheat-sheet-for-python-operations/
 
 https://note.nkmk.me/en/python-function-return-multiple-values/
 
-https://stackoverflow.com/questions/1963507/time-complexity-of-accessing-a-python-dict
+https://wiki.python.org/moin/TimeComplexity
+
+https://newbedev.com/runtime-of-python-s-if-substring-in-string
 
 
 ## Still to do
