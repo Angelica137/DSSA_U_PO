@@ -76,18 +76,17 @@ it should be O(n)
 
 -> Task 4
 
-* Worst case complexity find_telemarketers(calls, texts): 
+* Worst case complexity find_telemarketers(calls, texts): O(n log n))
 * Algorithm
-		* initialise an empty set (complexity: O(1))
-		* initialise an empty set (complexity: O(1))
+		* initialise an empty set for outgoing calls(complexity: O(1))
+		* initialise an empty set for incoming calls and texts(complexity: O(1))
 		* map through calls (complexity: O(n))
-		    * search substring in call (complexity: O(nm))
-        		* add area code to list (complexity: O(1))
-				* search substring in call (complexity: O(nm))
-    		    * add area code to list (complexity: O(1) + O(k) + O(nm) + O(1))
-        * search substring in call (complexity: O(nm))
-				    * add area code to list (complexity: O(1))
-    * create set of unique codes (complexity: O(1))
-    * sort set of unique codes (complexity: O(nlogn))
-		* calcualte percentage of calls within bangalore (complexity: O(1))
+        * add outgoing number to outgoing numbercalls set (complexity: O(1))
+        * add incoming number to incoming calls and texts set (complexity: O(1))
+    * map through texts (complexity: O(n))
+        * add outgoing number to incoming calls and texts set (complexity: O(1))
+        * add incoming number to incoming calls and texts set (complexity: O(1))
+    * calcualte set difference (complexity: O(1) + O(n))
+    * sort telemarketers set (complexity: O(n log n))
     * return statement (complexity: O(1))
+    
