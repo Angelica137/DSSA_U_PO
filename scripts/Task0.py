@@ -28,7 +28,7 @@ def first_text(texts):
     Returns the first record of texts
     '''
     result = "First record of texts, {} texts {} at time {}".format(
-        texts[0][0], texts[0][1], texts[0][2])  # O(1) + O(1) + O(1)
+        texts[0][0], texts[0][1], texts[0][2])  # O(1) + O(1) + O(n)
     return result  # O(1)
 
 
@@ -37,7 +37,7 @@ def last_call(calls):
     Print the alst record of calls
     '''
     resultCall = "Last record of calls, {} calls {} at time {}, lasting {} seconds".format(
-        calls[-1][0], calls[-1][1], calls[-1][2], calls[-1][3])  # O(1) + O(1) + O(1)
+        calls[-1][0], calls[-1][1], calls[-1][2], calls[-1][3])  # O(1) + O(1) + O(n)
     return resultCall  # O(1)
 
 
