@@ -32,11 +32,10 @@ def longest_call(calls):
             call_times[call[0]] += int(call[3])  # 1 step + O(n)
         if call[1] in call_times:  # O(n)
             call_times[call[1]] += int(call[3])  # 1 step + O(n)
-        else:
-            if call[0] not in call_times:  # O(n)
-                call_times[call[0]] = int(call[3])  # 1 step + O(n)
-            if call[1] not in call_times:
-                call_times[call[1]] = int(call[3])  # 1 step + O(n)
+        if call[0] not in call_times:  # O(n)
+            call_times[call[0]] = int(call[3])  # 1 step + O(n)
+        if call[1] not in call_times:
+            call_times[call[1]] = int(call[3])  # 1 step + O(n)
     max_time = max(call_times.values())  # O(n)
     number = [k for k, v in call_times.items() if v == max_time][0]  # O(n) + 1
     copy = "{} spent the longest time, {} seconds, on the phone during September 2016."  # 1 step
