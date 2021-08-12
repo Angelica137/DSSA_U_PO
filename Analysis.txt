@@ -18,6 +18,9 @@
     * return result (complexity: O(1))
 
 
+I am not sure about the time complexity of .format(), I think 
+it could be O(n)
+
 -> Task 1
 
 * Worst case complexity uniqueNumbers(texts, calls): O(n)
@@ -32,6 +35,23 @@
 
 
 -> Task 2
+
+* Worst case complexity longestCall(calls): O(n)
+* Algorithm
+		* create an empty dictionary (complexity: O(1))
+		* map through calls (complexity: O(n))
+		* search dictionary for call (complexity: O(1))
+    		if found:
+    		* add key value pair to dictionary (complexity: O(1))
+				* transform string to int (complexity: O(n))
+    		else:
+				* transform string to int (complexity: O(n))
+    		* increase value (complexity: O(1))
+		* get max value from dictionary (complexity: O(n))
+		* get the number with the highest value (complexity: O(n) + 1)
+		* store copy in variable copy (complexity: O(1))
+    * store copy with variables using .format in variable (complexity: O(1) + O(n))
+    * return statement (complexity: O(1))
 
 Big Oh Calculation longestCall(calls):
 

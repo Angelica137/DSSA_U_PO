@@ -41,6 +41,8 @@ https://www.geeksforgeeks.org/complexity-cheat-sheet-for-python-operations/
 
 https://note.nkmk.me/en/python-function-return-multiple-values/
 
+https://stackoverflow.com/questions/1963507/time-complexity-of-accessing-a-python-dict
+
 
 ## Still to do
 Raise exceptions, specially look at task 3
