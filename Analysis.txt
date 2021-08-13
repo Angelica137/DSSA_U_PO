@@ -1,6 +1,6 @@
 -> Task 0
 
-* Worst case complexity firstText(texts): O(n)
+* Worst case complexity firstText(texts): O(1)
 * Algorithm
 		* initialise results variable (complexity: O(1))
 		* access list element (complexity: O(1))
@@ -10,18 +10,15 @@
     * return result (complexity: O(1))
     
 
-* Worst case complexity lastCall(calls): O(n)
+* Worst case complexity lastCall(calls): O(1)
 * Algorithm
-		* initialise results variable (complexity: O(n))
+		* initialise results variable (complexity: O(1))
 		* access list element (complexity: O(1))
 		* access list element (complexity: O(1))
 		* access list element (complexity: O(1))
 		* use .format() to add vars to string (complexity: O(n))
     * return result (complexity: O(1))
 
-
-I am not sure about the time complexity of .format(), I think 
-it should be O(n)
 
 -> Task 1
 
