@@ -25,22 +25,18 @@ def longest_call(calls):
     '''
     returns the number that spent the longest time on the phone this period
     '''
-    call_times = {}  # O(1)
-    count = 0
-    for call in calls:  # O(n)
-        if call[0] in call_times:  # O(n)
-            call_times[call[0]] += int(call[3])  # 1 step + O(n)
-        if call[1] in call_times:  # O(n)
-            call_times[call[1]] += int(call[3])  # 1 step + O(n)
-        if call[0] not in call_times:  # O(n)
-            call_times[call[0]] = int(call[3])  # 1 step + O(n)
-        if call[1] not in call_times:
-            call_times[call[1]] = int(call[3])  # 1 step + O(n)
-    max_time = max(call_times.values())  # O(n)
-    number = [k for k, v in call_times.items() if v == max_time][0]  # O(n) + 1
-    copy = "{} spent the longest time, {} seconds, on the phone during September 2016."  # 1 step
-    answer_task2 = copy.format(number, max_time)  # 1 step + O(n)?
-    return answer_task2  # 1 step
+    telephone_nos = dict()
+    for i in range(len(calls)):
+        telephone_nos[calls[i][0]] = telephone_nos.get(
+            calls[i][0], 0) + int(calls[i][-1])
+        telephone_nos[calls[i][1]] = telephone_nos.get(
+            calls[i][1], 0) + int(calls[i][-1])
+    max_telephone_num = max(telephone_nos, key=lambda x: telephone_nos.get(x))
+    max_duration = telephone_nos.get(max_telephone_num)
+    return max_telephone_num, max_duration
 
 
-print(longest_call(calls))
+task2_result = longest_call(calls)
+answer_task2 = "{} spent the longest time, {} seconds, on the phone during September 2016.".format(
+    task2_result[0], task2_result[1])
+print(answer_task2)
