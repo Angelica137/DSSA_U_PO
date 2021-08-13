@@ -35,20 +35,20 @@
 
 -> Task 2
 
-* Worst case complexity longestCall(calls): O(n^2)
+* Worst case complexity longestCall(calls): O(n)
 * Algorithm
 		* initialise an empty dictionary (complexity: O(1))
 		* map through calls (complexity: O(n))
-    		*if outgoing number found (complexity: O(n))
+    		*if outgoing number found in dictionary (complexity: O(1))
             * add key value pair to dictionary (complexity: O(1))
             * transform string to int (complexity: O(n))
-        * if incoming number found (complexity: O(n)) 
+        * if incoming number found in dictionary (complexity: O(1)) 
             * add key value pair to dictionary (complexity: O(1))
             * transform string to int (complexity: O(n))
-        * if outgoing number not in dictionary (complexity: O(n))
+        * if outgoing number not in dictionary (complexity: O(1))
             * transform string to int (complexity: O(n))
             * increase value (complexity: O(1))
-        * if outgoing number not in dictionary (complexity: O(n))
+        * if outgoing number not in dictionary (complexity: O(1))
             * transform string to int (complexity: O(n))
             * increase value (complexity: O(1))
 		* get max value from dictionary (complexity: O(n))
